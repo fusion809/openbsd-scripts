@@ -4,8 +4,11 @@ if ! [[ -d $HOME/GitHub/mine/scripts ]]; then
   mkdir $HOME/GitHub/mine/scripts
 fi
 
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin:/usr/games
+export PKG_PATH=http://mirror.aarnet.edu.au/pub/OpenBSD/$(uname -r)/packages/$(uname -p)/
+
 # Get openssh, if not pre-installed and Zsh
-sudo pkg_add zsh git
+sudo pkg_add zsh git bash
 
 # Clone openbsd-scripts repo
 if ! [[ -d $HOME/GitHub/mine/scripts/openbsd-scripts ]]; then
