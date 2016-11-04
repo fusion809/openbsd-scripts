@@ -14,8 +14,16 @@ sudo pkg_add zsh git bash
 if ! [[ -d $HOME/GitHub/mine/scripts/openbsd-scripts ]]; then
   git clone https://github.com/fusion809/openbsd-scripts $HOME/GitHub/mine/scripts/openbsd-scripts
   # Copy across
-  cp $HOME/GitHub/mine/scripts/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
-  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
+  cp $HOME/GitHub/mine/scripts/openbsd-scripts/{.bashrc,.zshrc} $HOME/
+  if ! [[ -d $HOME/Shell ]]; then
+    mkdir -p $HOME/Shell
+  fi
+  cp $HOME/GitHub/mine/scripts/openbsd-scripts/Shell/* $HOME/Shell
+  if ! [[ -d /root/Shell ]]; then
+    sudo mkdir -p /root/Shell
+  fi
+  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/{.bashrc,.zshrc} /root/
+  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/Shell/* /root/Shell
 elif [[ -d $HOME/GitHub/openbsd-scripts ]]; then
   cd $HOME/GitHub/openbsd-scripts
   git pull origin master
@@ -28,8 +36,16 @@ elif [[ -d $HOME/GitHub/mine/scripts/openbsd-scripts ]]; then
   git pull origin master
   cd -
   # Copy across
-  cp $HOME/GitHub/mine/scripts/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
-  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
+  cp $HOME/GitHub/mine/scripts/openbsd-scripts/{.bashrc,.zshrc} $HOME/
+  if ! [[ -d $HOME/Shell ]]; then
+    mkdir -p $HOME/Shell
+  fi
+  cp $HOME/GitHub/mine/scripts/openbsd-scripts/Shell/* $HOME/Shell
+  if ! [[ -d /root/Shell ]]; then
+    sudo mkdir -p /root/Shell
+  fi
+  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/{.bashrc,.zshrc} /root/
+  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/Shell/* /root/Shell
 fi
 
 if ! [[ -d $HOME/.oh-my-zsh ]]; then
