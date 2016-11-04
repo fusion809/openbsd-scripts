@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 # Create GitHub directory
 if ! [[ -d $HOME/GitHub/mine/scripts ]]; then
   mkdir -p $HOME/GitHub/mine/scripts
