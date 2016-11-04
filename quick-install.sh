@@ -14,22 +14,22 @@ sudo pkg_add zsh git bash
 if ! [[ -d $HOME/GitHub/mine/scripts/openbsd-scripts ]]; then
   git clone https://github.com/fusion809/openbsd-scripts $HOME/GitHub/mine/scripts/openbsd-scripts
   # Copy across
-  cp -a $HOME/GitHub/mine/scripts/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
-  sudo cp -a $HOME/GitHub/mine/scripts/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
+  cp $HOME/GitHub/mine/scripts/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
+  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
 elif [[ -d $HOME/GitHub/openbsd-scripts ]]; then
   cd $HOME/GitHub/openbsd-scripts
   git pull origin master
   cd -
   # Copy across
-  cp -a $HOME/GitHub/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
-  sudo cp -a $HOME/GitHub/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
+  cp $HOME/GitHub/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
+  sudo cp $HOME/GitHub/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
 elif [[ -d $HOME/GitHub/mine/scripts/openbsd-scripts ]]; then
   cd $HOME/GitHub/mine/scripts/openbsd-scripts
   git pull origin master
   cd -
   # Copy across
-  cp -a $HOME/GitHub/mine/scripts/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
-  sudo cp -a $HOME/GitHub/mine/scripts/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
+  cp $HOME/GitHub/mine/scripts/openbsd-scripts/{Shell,.bashrc,.zshrc} $HOME/
+  sudo cp $HOME/GitHub/mine/scripts/openbsd-scripts/root/{Shell,.bashrc,.zshrc} /root/
 fi
 
 if ! [[ -d $HOME/.oh-my-zsh ]]; then
@@ -44,12 +44,12 @@ fi
 if ! [[ -d $HOME/GitHub/mine/scripts/zsh-theme ]]; then
 # Get my self-made zsh-themes
   git clone https://github.com/fusion809/zsh-theme $HOME/GitHub/mine/scripts/zsh-theme
-  cp -a $HOME/GitHub/mine/scripts/zsh-theme/*.zsh-theme $HOME/.oh-my-zsh/themes/
+  cp $HOME/GitHub/mine/scripts/zsh-theme/*.zsh-theme $HOME/.oh-my-zsh/themes/
 else
   cd $HOME/GitHub/{,mine/}zsh-theme
   git pull origin master
   cd -
-  cp -a $HOME/GitHub/{,mine/}zsh-theme/*.zsh-theme $HOME/.oh-my-zsh/themes/
+  cp $HOME/GitHub/{,mine/}zsh-theme/*.zsh-theme $HOME/.oh-my-zsh/themes/
 fi
 
 if ! [[ -d $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting ]]; then
@@ -62,6 +62,6 @@ if ! [[ -d $HOME/.oh-my-zsh/plugins/zsh-history-substring-search ]]; then
 fi
 
 # Change default login shell to Zsh
-chsh -s /bin/zsh
-sudo chsh -s /bin/zsh
-/bin/zsh
+chsh -s /usr/local/bin/zsh
+sudo chsh -s /usr/local/bin/zsh
+/usr/local/bin/zsh
