@@ -1,7 +1,7 @@
 #!/bin/bash
 # Create GitHub directory
 if ! [[ -d $HOME/GitHub/mine/scripts ]]; then
-  mkdir $HOME/GitHub/mine/scripts
+  mkdir -p $HOME/GitHub/mine/scripts
 fi
 
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin:/usr/games
