@@ -5,3 +5,7 @@ function cdr {
 function cdp {
   cd /usr/ports
 }
+
+function cdsh {
+  cd $HOME/Shell
+}
