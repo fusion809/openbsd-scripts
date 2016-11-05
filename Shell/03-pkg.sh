@@ -3,5 +3,9 @@ function pkgup {
 }
 
 function pkgin {
-  sudo pkg_add "$@"
+  sudo pkg_add $@
+}
+
+function pkgrm {
+  sudo pkg_delete $@
 }
